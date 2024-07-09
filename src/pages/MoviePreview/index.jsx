@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-export function Details() {
+export function MoviePreview() {
   return (
     <Container>
       <h1>Hello World</h1>  
