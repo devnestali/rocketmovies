@@ -7,9 +7,22 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    font-size: 62.5%;
+  }
+
   body {
     background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.WHITE};
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body, input, button, textarea {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1.6rem;
+    outline: none;
   }
 
   a {
@@ -24,4 +37,6 @@ export default createGlobalStyle`
   button:hover, a:hover {
     filter: brightness(0.9);
   }
+  
+
 `;
