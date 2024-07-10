@@ -6,7 +6,8 @@ export function MoviePreview() {
     <Container>
       <h1>Hello World</h1>  
       <span>Victor Nestali</span>
-      <Button />
+      <Button title="Entrar" loading />
+      <Button title="Sair"/>
     </Container>
   )
 }
