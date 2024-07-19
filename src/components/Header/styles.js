@@ -11,8 +11,9 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 6.4rem;
   
-  padding: 0 6.4rem;
+  padding: 0 12.3rem;
 
   > a {
     font-size: 2.4rem;
@@ -40,6 +41,7 @@ export const Profile = styled.div`
 
     > strong {
       color: ${({ theme }) => theme.COLORS.GRAY_100};
+      white-space: nowrap;
     }
 
     > button {
