@@ -3,7 +3,9 @@ import { Container, Profile } from "./styles";
 export function Header() {
   return (
     <Container>
-       <Profile>
+        <a href="/">RocketMovies</a>
+          
+        <Profile>
           <div>
             <strong>Victor Nestali</strong>
             <button type="button">Sair</button>

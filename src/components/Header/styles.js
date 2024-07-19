@@ -10,8 +10,16 @@ export const Container = styled.header`
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
   
   padding: 0 6.4rem;
+
+  > a {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: ${({ theme }) => theme.COLORS.PINK};
+    
+  }
 `;
 
 export const Profile = styled.div`
