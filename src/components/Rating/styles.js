@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
+  
   > input[type="radio"] {
     height: 1px;
     width: 1px;

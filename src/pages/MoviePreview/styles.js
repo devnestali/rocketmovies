@@ -22,7 +22,7 @@ export const Container = styled.div`
       padding-bottom: 2.4rem;
     }
 
-    div {
+    .title {
       display: flex;
       align-items: center;
       
@@ -31,7 +31,38 @@ export const Container = styled.div`
         font-weight: 600;
         letter-spacing: .1rem;
         margin-right: 1.9rem;
-        
+      }
+    }
+
+    .aboutWriter {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+
+      .author {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        > img {
+          width: 2.2rem;
+          height: 2.2rem;
+          border-radius: 50%;
+          border: 1px solid ${({ theme }) => theme.COLORS.GRAY_500};
+        }
+      }
+
+      .timeWasWritten {
+        > p {
+          display: flex;
+          align-items: center;
+          gap: .8rem;
+
+          > svg {
+            color: ${({ theme }) => theme.COLORS.PINK};
+          }
+        }
       }
     }
   }
