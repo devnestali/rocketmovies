@@ -2,6 +2,7 @@ import { Container } from "./styles";
 import { Header } from "../../components/Header";
 import { FiArrowLeft, FiClock } from 'react-icons/fi'
 import { Rating } from "../../components/Rating";
+import { Tag } from "../../components/Tag";
 
 export function MoviePreview() {
   return (
@@ -28,8 +29,12 @@ export function MoviePreview() {
           <div className="timeWasWritten">
             <p><FiClock size={20} /> 25/05/22 às 08:00</p>
           </div>
+
         </div> 
        
+          <Tag title="Ficção Científica" />
+          <Tag title="Drama" />
+          <Tag title="Família" />
         
       </main>
 

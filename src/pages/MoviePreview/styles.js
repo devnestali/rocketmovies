@@ -38,7 +38,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       gap: 2rem;
-      margin-top: 2.5rem;
+      margin: 2.5rem 0 4rem 0;
 
       .author {
         display: flex;
