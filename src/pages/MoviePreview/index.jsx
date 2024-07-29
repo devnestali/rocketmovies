@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 import { Header } from "../../components/Header";
 import { FiArrowLeft } from 'react-icons/fi'
-import { Rating } from "../../components/Rating";
 import { Tag } from "../../components/Tag";
 import { AboutWriter } from "../../components/AboutWriter";
+import { Title } from "../../components/Title";
 
 export function MoviePreview() {
   return (
@@ -13,10 +13,7 @@ export function MoviePreview() {
       <main>
         <a href="/"><FiArrowLeft /> Voltar</a>
         
-        <div className="title">
-          <h1>Interstellar</h1>
-          <Rating />
-        </div>
+        <Title title="Interstellar" ratingIcon/>
 
         <AboutWriter src="https://github.com/devnestali.png" title="Victor Nestali"/> 
        

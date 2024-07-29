@@ -2,7 +2,7 @@
 import { Container } from "./styles";
 import { FiClock} from "react-icons/fi"
 
-export function AboutWritter({ src, title,  ...rest }) {
+export function AboutWriter({ src, title,  ...rest }) {
   return (
     <Container>
       <div>
