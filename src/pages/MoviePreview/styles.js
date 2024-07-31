@@ -13,6 +13,7 @@ export const Container = styled.div`
   > main {
     min-width: 113.7rem;
     margin: 4rem auto 0;
+    overflow-y: auto;
 
     > a {
       display: flex;
