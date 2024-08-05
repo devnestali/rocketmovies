@@ -15,6 +15,19 @@ export const Container = styled.div`
     margin: 4rem auto 0;
     overflow-y: auto;
 
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.PINK};
+      border-radius: 6px;
+    }
+
     > a {
       display: flex;
       align-items: center;
