@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
 import GlobalStyle from './styles/global'; 
 
-import { MoviePreview } from './pages/MoviePreview'
+import { MoviePreview } from './pages/MoviePreview';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

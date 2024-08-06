@@ -27,13 +27,5 @@ export const Container = styled.div`
       background: ${({ theme }) => theme.COLORS.PINK};
       border-radius: 6px;
     }
-
-    > a {
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-      color: ${({ theme }) => theme.COLORS.PINK};
-      padding-bottom: 2.4rem;
-    }
   }
 `;
