@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
-import { Container } from "./styles";
+import { Container, IsATag, IsNotATag } from "./styles";
 
-export function Text({ title_1, title_2 }) {
+export function Text({ text, isATag = false }) {
   return (
     <Container>
-      <p>{title_1}</p>
-      <p>{title_2}</p>
+      {isATag ? 
+        <IsATag>{text}</IsATag> 
+        : 
+        <IsNotATag>{text}</IsNotATag>
+      }
     </Container>
   )
 }

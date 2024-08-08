@@ -13,6 +13,7 @@ export const Container = styled.div`
 
   main {
     padding: 0 12.3rem;
+    width: 100vw;
 
     .mainTitle {
       display: flex;
@@ -34,11 +35,15 @@ export const Container = styled.div`
         background-color: ${({ theme }) => theme.COLORS.PINK};
         padding: 1.35rem 3.2rem;
         border-radius: .8rem;
-
-        > svg {
-          
-        }
       }
+    }
+
+    .filmsContent {
+      width: 100%;
+      height: 22.3rem;
+      padding: 3.2rem;
+      border-radius: .8rem;
+      background-color: ${({ theme }) => theme.COLORS.GRAY_700};
     }
   }
 `;
