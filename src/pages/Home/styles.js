@@ -37,13 +37,5 @@ export const Container = styled.div`
         border-radius: .8rem;
       }
     }
-
-    .filmsContent {
-      width: 100%;
-      height: 22.3rem;
-      padding: 3.2rem;
-      border-radius: .8rem;
-      background-color: ${({ theme }) => theme.COLORS.GRAY_700};
-    }
   }
 `;

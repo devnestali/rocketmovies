@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Container } from "./styles";
 
-export function Tag ({ title }) {
+export function Tag ({ tagName }) {
   return (
     <Container>
-      {title}
+      {tagName}
     </Container>
   )
 }
