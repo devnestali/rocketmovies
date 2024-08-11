@@ -14,6 +14,20 @@ export const Container = styled.div`
   main {
     padding: 0 12.3rem;
     width: 100vw;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.COLORS.PINK};
+      border-radius: 6px;
+    }
 
     .mainTitle {
       display: flex;
