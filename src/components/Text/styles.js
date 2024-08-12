@@ -6,8 +6,11 @@ export const Container = styled.div`
 
 export const IsNotATag = styled.p`
   width: 100%;
-  margin-top: 1.5rem;
-  color: red;
+  margin-top: 4rem;
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  
+  display: flex;
+  flex-direction: column;
 `;
 
 export const IsATag = styled.p`
