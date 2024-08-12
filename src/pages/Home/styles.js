@@ -5,13 +5,14 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 11.5rem auto;
+  grid-template-rows: 11.6rem auto;
   grid-template-areas: 
     "header"
     "content"
   ;
 
   main {
+    grid-area: content;
     padding: 0 12.3rem;
     width: 100vw;
     overflow-y: auto;

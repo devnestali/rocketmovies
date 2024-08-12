@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   width: 100%;
-  background-color: ${({ theme}) => theme.COLORS.PINK};
-  color: ${({ theme}) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme, deleteButton}) => deleteButton ? theme.COLORS.BLACK : theme.COLORS.PINK};
+  color: ${({ theme, deleteButton}) => deleteButton ? theme.COLORS.PINK : theme.COLORS.BACKGROUND_700};
 
   height: 5.6rem;
   

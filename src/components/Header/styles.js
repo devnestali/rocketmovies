@@ -5,8 +5,9 @@ export const Container = styled.header`
 
   height: 11.6rem;
   width: 100%;
+  
 
-  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_600};
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_500};
 
   display: flex;
   justify-content: space-between;
@@ -14,7 +15,7 @@ export const Container = styled.header`
   gap: 6.4rem;
   
   padding: 0 12.3rem;
-
+  z-index: 1;
   > a {
     font-size: 2.4rem;
     font-weight: 600;
