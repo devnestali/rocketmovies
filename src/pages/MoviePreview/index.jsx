@@ -12,7 +12,7 @@ export function MoviePreview() {
       <Header />
 
       <main>
-        <ButtonText title="Voltar" buttonIcon/>
+        <ButtonText title="Voltar" href="/" buttonIcon/>
         
         <Title title="Interstellar" ratingIcon/>
 

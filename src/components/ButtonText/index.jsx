@@ -4,8 +4,7 @@ import { FiArrowLeft} from "react-icons/fi"
 
 export function ButtonText({ title, buttonIcon = false, ...rest }) {
   return (
-    <Container 
-      type="button"  
+    <Container   
       {...rest}
     >
       {buttonIcon && <FiArrowLeft />}
