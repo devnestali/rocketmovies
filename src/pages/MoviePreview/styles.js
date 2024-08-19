@@ -27,5 +27,9 @@ export const Container = styled.div`
       background: ${({ theme }) => theme.COLORS.PINK};
       border-radius: 6px;
     }
+
+    h1 {
+      padding-top: 2.5rem;
+    }
   }
 `;

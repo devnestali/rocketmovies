@@ -49,6 +49,10 @@ export const Form = styled.form`
   > header {
     display: grid;
     margin-bottom: 4rem;
+
+    h1 {
+      padding-top: 2.5rem;
+    }
   }
 
   > div {
