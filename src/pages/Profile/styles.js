@@ -16,3 +16,8 @@ export const Container = styled.div`
 
   }
 `;
+
+export const Form = styled.form`
+  max-width: 34rem;
+  margin: 6.4rem auto 0;
+`;
