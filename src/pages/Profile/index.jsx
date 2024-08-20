@@ -10,7 +10,7 @@ export function Profile() {
   return (
     <Container>
       <header>
-        <ButtonText title="Voltar" href="/" buttonIcon/>
+        <ButtonText title="Voltar" to="/" buttonIcon/>
       </header>
 
       <Form>

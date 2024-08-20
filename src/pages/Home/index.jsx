@@ -1,7 +1,9 @@
-import { Container } from "./styles";
+import { Container, NewFilm } from "./styles";
+
 import { Header } from "../../components/Header";
-import { FiPlus } from "react-icons/fi"
 import { FilmContent } from "../../components/FilmContent";
+
+import { FiPlus } from "react-icons/fi"
 
 export function Home() {
   return (
@@ -11,7 +13,9 @@ export function Home() {
       <main>
         <div className="mainTitle">
           <h3>Meus Filmes</h3>
-          <button><FiPlus /> Adicionar filme</button>
+          <NewFilm to="/createmovie">
+            <FiPlus /> Adicionar filme
+          </NewFilm>
         </div>
           
         <FilmContent 

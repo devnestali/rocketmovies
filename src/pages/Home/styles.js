@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -39,18 +40,18 @@ export const Container = styled.div`
         font-size: 3.2rem;
         font-weight: 400;
       }
-
-      > button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: .8rem;
-
-        border: none;
-        background-color: ${({ theme }) => theme.COLORS.PINK};
-        padding: 1.35rem 3.2rem;
-        border-radius: .8rem;
-      }
     }
   }
+`;
+
+export const NewFilm = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+
+  background-color: ${({ theme }) => theme.COLORS.PINK};
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  padding: 1.35rem 3.2rem;
+  border-radius: .8rem;
 `;

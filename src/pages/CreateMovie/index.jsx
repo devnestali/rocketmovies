@@ -15,7 +15,7 @@ export function CreateMovie() {
       <main>
         <Form>
           <header>
-            <ButtonText title="Voltar" href="/" buttonIcon/>
+            <ButtonText title="Voltar" to="/" buttonIcon/>
             <h1>Novo filme</h1>
           </header>
 
