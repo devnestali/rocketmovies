@@ -2,9 +2,9 @@ import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-import { Container, Form } from "./styles";
+import { Container, Form, Avatar } from "./styles";
 
-import { FiUser, FiMail, FiLock } from "react-icons/fi";
+import { FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 
 export function Profile() {
   return (
@@ -14,6 +14,21 @@ export function Profile() {
       </header>
 
       <Form>
+        <Avatar>
+          <img 
+            src="https://github.com/devnestali.png" 
+            alt="Foto do usuário" 
+          />
+
+          <label htmlFor="avatar">
+            <FiCamera />
+            <input 
+              id="avatar"
+              type="file"
+            />
+          </label>
+        </Avatar>
+
         <Input 
           placeholder="Usuário"
           type="text"
