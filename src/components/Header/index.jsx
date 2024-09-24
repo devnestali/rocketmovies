@@ -4,7 +4,7 @@ import { Container, Profile } from "./styles";
 export function Header() {
   return (
     <Container>
-        <a href="/">RocketMovies</a>
+        <a to="/">RocketMovies</a>
 
         <Input placeholder="Pesquisar pelo título" />
           

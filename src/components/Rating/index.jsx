@@ -11,9 +11,9 @@ export function Rating() {
       <input type="radio" id="3-stars" name="rating" value="3" />
       <label htmlFor="3-stars"><FiStar size={20} fill="#FF859B"/></label>
       <input type="radio" id="2-stars" name="rating" value="2" />
-      <label htmlFor="2-stars"><FiStar size={20} fill="#FF859B"/></label>
+      <label htmlFor="2-stars"><FiStar size={20} fill=""/></label>
       <input type="radio" id="1-stars" name="rating" value="1" />
-      <label htmlFor="1-stars"><FiStar size={20} fill=""/></label>
+      <label htmlFor="1-stars"><FiStar size={20} fill=""  /></label>
     </Container>
   )
 }
