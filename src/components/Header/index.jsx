@@ -1,11 +1,17 @@
 import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
+
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+
 import { useNavigate } from "react-router-dom";
 import { Input } from "../Input";
 import { Container, Profile } from "./styles";
 
 export function Header() {
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
   const navigate = useNavigate();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
 
   function handleNavigation() {
@@ -25,8 +31,8 @@ export function Header() {
           </div>
 
           <img 
-            src="https://github.com/devnestali.png" 
-            alt="Foto do usuário" 
+            src={avatarUrl}
+            alt={user.name}
           />
        </Profile>
     </Container>
