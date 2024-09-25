@@ -11,7 +11,7 @@ export function Header() {
   function handleNavigation() {
     navigate('/profile');
   }
-  
+
   return (
     <Container>
         <a to="/">RocketMovies</a>
