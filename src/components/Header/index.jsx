@@ -18,10 +18,10 @@ export function Header() {
 
         <Input placeholder="Pesquisar pelo título" />
           
-        <Profile onClick={handleNavigation()}>
+        <Profile onClick={() => handleNavigation()}>
           <div>
             <strong>Victor Nestali</strong>
-            <button type="button" onClick={signOut}>Sair</button>
+            <button type="button" onClick={e => signOut(e)}>Sair</button>
           </div>
 
           <img 

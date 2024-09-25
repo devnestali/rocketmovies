@@ -27,11 +27,12 @@ function AuthProvider({ children }) {
     }
   }
 
-  function signOut() {
+  function signOut(e) {
     localStorage.removeItem("@rocketmovies:token");
     localStorage.removeItem("@rocketmovies:user");
 
     setData({});
+    e.stopPropagation();
   }
 
   async function updateProfile({ user }) {

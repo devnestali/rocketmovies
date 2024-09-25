@@ -25,9 +25,10 @@ export const Container = styled.header`
   }
 `;
 
-export const Profile = styled(Link)`
+export const Profile = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   > img {
     width: 6.4rem;
@@ -42,8 +43,14 @@ export const Profile = styled(Link)`
     line-height: 2.4rem;
 
     > strong {
+      font-size: 1.8rem;
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       white-space: nowrap;
+      transition: filter .2s;
+    }
+
+    > strong:hover {
+      filter: brightness(0.9);
     }
 
     > button {
