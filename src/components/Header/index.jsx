@@ -26,7 +26,7 @@ export function Header() {
           
         <Profile onClick={() => handleNavigation()}>
           <div>
-            <strong>Victor Nestali</strong>
+            <strong>{user.name}</strong>
             <button type="button" onClick={e => signOut(e)}>Sair</button>
           </div>
 
