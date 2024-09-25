@@ -17,6 +17,10 @@ export function CreateMovie() {
     setTags(prevState => [...prevState, newTag]);
     setNewTag("");
   }
+
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted));
+  }
   
   return (
     <Container>
@@ -44,7 +48,7 @@ export function CreateMovie() {
                     <NoteItem 
                     key={String(index)}  
                     value={tag}
-                    onClick={() => { }}
+                    onClick={() => handleRemoveTag(tag)}
                     />
                 ))
               }
