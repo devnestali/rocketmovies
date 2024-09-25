@@ -11,14 +11,22 @@ import { Container, Form, Avatar } from "./styles";
 import { FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 
 export function Profile() {
-  const { user } = useAuth();
+  const { user, updateProfile } = useAuth();
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [currentPassword, setCurrentPassword] = useState();
   const [newPassword, setNewPassword] = useState();
 
   async function handleUpdate() {
-    console.log(name, email, currentPassword, newPassword)
+    const user = {
+      name,
+      email,
+      password: newPassword,
+      old_password: currentPassword,
+    }
+
+
+    await updateProfile({ user });
   }
   
   return (
