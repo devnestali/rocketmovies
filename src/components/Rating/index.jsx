@@ -17,3 +17,5 @@ export function Rating() {
     </Container>
   )
 }
+
+// Criar funcao dentro de createmovie e exportar ela para poder passar como parametro o proprio value de cada uma das notas de 0 a 5

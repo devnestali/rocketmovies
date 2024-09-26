@@ -25,6 +25,13 @@ export default createGlobalStyle`
     outline: none;
   }
 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
+  }
+
   a {
     text-decoration: none;
   }

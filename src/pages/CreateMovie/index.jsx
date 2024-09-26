@@ -6,13 +6,40 @@ import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 
 import { Container, Form } from "./styles";
 
 export function CreateMovie() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  
+  const [rating, setRating] = useState(0);
+  
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
 
+  const navigate = useNavigate();
+
+  async function handleNewMovieNote() {
+    const ratingTypeNumber = Number(rating);
+
+    if(ratingTypeNumber < 0 || ratingTypeNumber > 5) {
+      return alert("Número inválido! Selecione números de 0 a 5");
+    }
+    
+    await api.post('/movieNotes', {
+      title,
+      description,
+      tags,
+      rating: ratingTypeNumber,
+    });
+
+    alert("Nota de Filme cadastrada com sucesso!");
+    navigate("/");
+  }
+  
   function handleTag() {
     setTags(prevState => [...prevState, newTag]);
     setNewTag("");
@@ -34,11 +61,21 @@ export function CreateMovie() {
           </header>
 
           <div>
-            <Input placeholder="Título" />
-            <Input placeholder="Sua nota (de 0 a 5)" />
+            <Input 
+              placeholder="Título"
+              onChange={e => setTitle(e.target.value)} 
+            />
+            <Input 
+              type="number"
+              placeholder="Sua nota (de 0 a 5)" 
+              onChange={e => setRating(e.target.value)}
+            />
           </div>
 
-          <Textarea placeholder="Observações"/>
+          <Textarea 
+            placeholder="Observações"
+            onChange={e => setDescription(e.target.value)}
+          />
 
           <section>
             <h3>Marcadores</h3>
@@ -65,7 +102,10 @@ export function CreateMovie() {
 
           <div className="buttons">
             <Button title="Excluir filme" deleteButton/>
-            <Button title="Salvar alterações" />
+            <Button 
+              title="Salvar alterações"
+              onClick={handleNewMovieNote} 
+            />
           </div>
         </Form>
       </main>
