@@ -25,8 +25,20 @@ export function CreateMovie() {
   async function handleNewMovieNote() {
     const ratingTypeNumber = Number(rating);
 
+    if(!ratingTypeNumber) {
+      return alert("Número inválido! Selecione números de 0 a 5");
+    }
+
     if(ratingTypeNumber < 0 || ratingTypeNumber > 5) {
       return alert("Número inválido! Selecione números de 0 a 5");
+    }
+    
+    if(!title) {
+      return alert("Digite o título da nota");
+    }
+
+    if(newTag) {
+      return alert("Existe um marcador no campo para adicionar que não foi adicionado. Clique em adicionar ou deixe o campo vazio.")
     }
     
     await api.post('/movieNotes', {
