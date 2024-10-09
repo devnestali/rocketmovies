@@ -1,19 +1,18 @@
 export default {
   COLORS: {
-    BACKGROUND_900: "#1C1B1E",
-    BACKGROUND_800: "#262529",
-    BACKGROUND_700: "#312E38",
-    BACKGROUND_600: "#3E3B47",
-    BACKGROUND_500: "#3D3B47",
+    BLACK_900: "#0D0C0F",
+    BLACK_800: "#1C1B1E",
+    BLACK_700: "#262529",
+    BLACK_600: "#312E38",
 
-    BLACK: "#000000",
-    WHITE: "#FFFFFF",
-    PINK: "#FF859B",
+    GRAY_900: "#3E3B47",
+    GRAY_800: "#948F99",
+    GRAY_700: "#999591",
 
-    GRAY_800: "#302E38",
-    GRAY_700: "#282124",
-    GRAY_500: "#948F99",
-    GRAY_200: "#E5E5E5",
-    GRAY_100: "#F4EDE8",
-  }
+    WHITE_900: "#CAC4CF",
+    WHITE_800: "#F4EDE8",
+
+    PINK_900: "#282124",
+    PINK_800: "#FF859B",
+  },
 };

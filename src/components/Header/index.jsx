@@ -8,7 +8,7 @@ import { Input } from "../Input";
 import { Container, Profile } from "./styles";
 
 export function Header() {
-  const { signOut, user } = useAuth();
+  const { signOut, user, setSearch } = useAuth();
   const navigate = useNavigate();
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
@@ -22,7 +22,10 @@ export function Header() {
     <Container>
         <a to="/">RocketMovies</a>
 
-        <Input placeholder="Pesquisar pelo título" />
+        <Input 
+          placeholder="Pesquisar pelo título"
+          onChange={e => setSearch(e.target.value)} 
+        />
           
         <Profile onClick={() => handleNavigation()}>
           <div>

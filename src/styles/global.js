@@ -12,38 +12,25 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-    color: ${({ theme }) => theme.COLORS.WHITE};
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body, input, button, textarea {
-    font-family: 'Roboto Slab', sans-serif;
     font-size: 1.6rem;
-    outline: none;
+    background-color: ${({ theme }) => theme.COLORS.BLACK_800};
   }
 
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    margin: 0;
+  body, input, textarea, button {
+    cursor: pointer;
+    transition: all .4s;
+  }
+
+  button:hover, a:hover {
+    filter: brightness(0.8);
+  }
+
+  button {
+    border: none;
   }
 
   a {
     text-decoration: none;
   }
-
-  button, a {
-    cursor: pointer;
-    transition: filter 0.2s;
-  }
-  
-  button:hover, a:hover {
-    filter: brightness(0.9);
-  }
-  
 
 `;

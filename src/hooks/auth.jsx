@@ -5,6 +5,7 @@ const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
+  const [search, setSearch] = useState("");
   
   async function signIn({ email, password }) {   
     try{
@@ -82,6 +83,8 @@ function AuthProvider({ children }) {
       signOut,
       updateProfile, 
       user: data.user,
+      search,
+      setSearch,
     }}>
       {children}
     </AuthContext.Provider>

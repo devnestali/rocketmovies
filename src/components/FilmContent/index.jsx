@@ -1,14 +1,12 @@
 /* eslint-disable react/prop-types */
+import { useAuth } from "../../hooks/auth";
 import { Rating } from "../Rating";
 import { Tag } from "../Tag";
 import { Text } from "../Text";
 import { Title } from "../Title";
 import { Container } from "./styles";
 
-export function FilmContent({ title, text, tagName = [], ...rest }) {
-  let tagNames = tagName.split(',')
-  
-  
+export function FilmContent({ title, text, tags, ...rest }) {  
   return (
     <Container>
       <Title title={title}/>
@@ -19,9 +17,8 @@ export function FilmContent({ title, text, tagName = [], ...rest }) {
         {...rest}
       />
 
-      <Tag tagName={tagNames[0]}/>
-      <Tag tagName={tagNames[1]}/>
-      <Tag tagName={tagNames[2]}/>
+      {tags}
+
     </Container>
   )
 }
