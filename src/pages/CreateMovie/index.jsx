@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+/* import { Header } from "../../components/Header";
 import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
@@ -123,4 +123,4 @@ export function CreateMovie() {
       </main>
     </Container>
   )
-}
+} */

@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   width: 100%;
-  background-color: ${({ theme, deleteButton}) => deleteButton ? theme.COLORS.BLACK : theme.COLORS.PINK};
-  color: ${({ theme, deleteButton}) => deleteButton ? theme.COLORS.PINK : theme.COLORS.BACKGROUND_700};
 
-  height: 5.6rem;
-  
-  border: 0;
-  padding: 0 1.6rem;
-  margin-top: 1.6rem;
+  background-color: ${({ theme, highlight }) => highlight ? theme.COLORS.PINK_800 : theme.COLORS.BLACK_900};
+
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+
   border-radius: 1rem;
+
   font-weight: 500;
+  color: ${({ theme, highlight }) => highlight ? theme.COLORS.BLACK_900 : theme.COLORS.PINK_800};
 
   &:disabled {
-    opacity: 0.5;
+    filter: brightness(0.5);
+    cursor: not-allowed;
   }
 `;

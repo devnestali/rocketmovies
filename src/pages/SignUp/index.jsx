@@ -4,13 +4,13 @@ import { Container, Form, Background } from "./styles";
 import { FiMail, FiLock, FiUser, FiArrowLeft } from "react-icons/fi";
 
 import { Link } from "react-router-dom";
-import { api }  from "../../services/api";
+/* import { api }  from "../../services/api"; */
 
-import { Input } from "../../components/Input";
+/* import { Input } from "../../components/Input"; */
 import { Button } from "../../components/Button";
 
 export function SignUp() {
-  const [name, setName] = useState("");
+  /* const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -39,7 +39,7 @@ export function SignUp() {
     });
 
 
-  }
+  } */
   
   return (
     <Container>
@@ -49,7 +49,7 @@ export function SignUp() {
 
         <h2>Crie sua conta</h2>
 
-        <Input 
+        {/* <Input 
           placeholder="Nome"
           type="text"
           icon={FiUser}
@@ -68,7 +68,7 @@ export function SignUp() {
           type="password"
           icon={FiLock}
           onChange={e => setPassword(e.target.value)}
-        />
+        /> */}
 
         <Button title="Cadastrar" onClick={handleSignUp} />
         

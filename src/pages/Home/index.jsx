@@ -1,4 +1,4 @@
-import { Container, NewFilm } from "./styles";
+/* import { Container, NewFilm } from "./styles";
 
 import { Header } from "../../components/Header";
 import { Tag } from "../../components/Tag";
@@ -71,4 +71,4 @@ export function Home() {
       
     </Container>
   )
-}
+} */

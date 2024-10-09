@@ -1,4 +1,4 @@
-import { Routes, Route }  from 'react-router-dom';
+/* import { Routes, Route }  from 'react-router-dom';
 
 import { CreateMovie } from '../pages/CreateMovie';
 import { MoviePreview } from '../pages/MoviePreview';
@@ -14,4 +14,4 @@ export function AppRoutes() {
       <Route path='/moviepreview/:id' element={<MoviePreview />} />
     </Routes>
   )
-}
+} */

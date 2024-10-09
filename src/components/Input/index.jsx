@@ -1,17 +1,10 @@
-import { useAuth } from "../../hooks/auth";
-import { Container } from "./styles";
+import { Container } from "./styles"
 
-// eslint-disable-next-line react/prop-types
-export function Input({ icon: Icon, onChange, ...rest}) {
+export function Input({ icon: Icon, type="text", className, ...rest }) {
   return (
-    <Container>
-      
-      {Icon && <Icon size={20} />}
-      <input 
-        onChange={onChange}  
-        {...rest} 
-      />
-
+    <Container className={className}>
+      {Icon && <Icon />}
+      <input type={type} {...rest} />
     </Container>
   )
 }

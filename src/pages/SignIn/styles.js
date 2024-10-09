@@ -1,49 +1,66 @@
 import styled from "styled-components";
-import backgroundImg from "../../assets/background.png"
+
+import bg_image from "../../assets/background.png";
 
 export const Container = styled.div`
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 
   display: flex;
   align-items: stretch;
 `;
 
+export const Content = styled.div`
+  width: 100%;
+  max-width: 50%;
+`;
+
 export const Form = styled.form`
-  padding: 0 13.4rem;
+  width: 100%;
+  max-width: 41rem;
+  padding: 30rem 4rem;
+  margin: auto;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
 
   text-align: center;
 
   > h1 {
     font-size: 4.8rem;
-    color: ${({ theme }) => theme.COLORS.PINK};
+    font-weight: 700;
+
+    color: ${({ theme }) => theme.COLORS.PINK_800};
+
+    @media (max-width: 425px) {
+      font-size: 10vw;
+    }
   }
 
   > p {
     font-size: 1.4rem;
-    color: ${({ theme }) => theme.COLORS.GRAY_200};
-    margin-bottom: 4.8rem;
+    color: ${({ theme }) => theme.COLORS.WHITE_900};;
   }
 
-  > h2 {
+  h2 {
     font-size: 2.4rem;
-    margin-bottom: 4.8rem;
+    font-weight: 500;
+    
+    text-align: center;
+    color: ${({ theme }) => theme.COLORS.WHITE_800};
+
+    margin: 4.8rem 0;
   }
 
-  > a {
-    margin: 4.2rem auto 0;
-    text-align: center;
-    color: ${({ theme }) => theme.COLORS.PINK};
+  > a:last-child {
+    margin-top: 4rem;
+    align-self: center;
   }
 `;
 
-export const Background = styled.div`
-  flex: 1;
-  background: url(${backgroundImg}) no-repeat center center;
+export const BackgroundImg = styled.div`
+  flex-grow: 1;
+  background: url(${bg_image}) no-repeat center center;
   background-size: cover;
-  opacity: .5;
 `;

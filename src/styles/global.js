@@ -16,7 +16,13 @@ export default createGlobalStyle`
     background-color: ${({ theme }) => theme.COLORS.BLACK_800};
   }
 
-  body, input, textarea, button {
+  body, input, textarea, button{
+    font-family: 'Roboto Slab', serif;
+    color: ${({ theme }) => theme.COLORS.WHITE_800};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button, a {
     cursor: pointer;
     transition: all .4s;
   }

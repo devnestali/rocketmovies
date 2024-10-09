@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+/* import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
 
 const AuthContext = createContext({});
@@ -97,4 +97,4 @@ function useAuth() {
   return context;
 }
 
-export { AuthProvider, useAuth }
+export { AuthProvider, useAuth } */

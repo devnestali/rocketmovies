@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+/* import { Container } from "./styles";
 import { Header } from "../../components/Header";
 import { Tag } from "../../components/Tag";
 import { AboutWriter } from "../../components/AboutWriter";
@@ -17,7 +17,7 @@ export function MoviePreview() {
         <Title title="Interstellar" ratingIcon/>
 
         <AboutWriter src="https://github.com/devnestali.png" title="Victor Nestali"/> 
-       
+        
         <Tag tagName="Ficção Científica" />
         <Tag tagName="Drama" />
         <Tag tagName="Família" />
@@ -31,4 +31,4 @@ export function MoviePreview() {
 
     </Container>
   )
-}
+} */

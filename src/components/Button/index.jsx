@@ -1,14 +1,16 @@
 import { Container }  from './styles';
 
 // eslint-disable-next-line react/prop-types
-export function Button ({ title, loading = false, deleteButton, ...rest}) {
+export function Button ({ icon: Icon, title, disabled = false, highlight = true, onClick }) {
   return (
-    <Container deleteButton={deleteButton}
+    <Container
       type='button'
-      disabled={loading}
-      {...rest}
+      disabled={disabled}
+      onClick={onClick}
+      highlight={highlight}
     >
-     {loading ? 'Carregando...' : title}
+      {Icon && <Icon />}
+      {title}
     </Container>
   )
 }

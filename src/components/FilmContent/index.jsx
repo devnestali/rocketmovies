@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types 
 import { useAuth } from "../../hooks/auth";
 import { Rating } from "../Rating";
 import { Tag } from "../Tag";
@@ -21,4 +21,4 @@ export function FilmContent({ title, text, tags, ...rest }) {
 
     </Container>
   )
-}
+} */ 
