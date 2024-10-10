@@ -1,14 +1,9 @@
-/* eslint-disable react/prop-types */
-import { Container } from "./styles";
-import { FiArrowLeft} from "react-icons/fi"
-
-export function ButtonText({ title, buttonIcon = false, ...rest }) {
+import { Container } from './styles';
+export function ButtonText({ icon: Icon, title, ...rest}) {
   return (
-    <Container   
-      {...rest}
-    >
-      {buttonIcon && <FiArrowLeft />}
+    <Container {...resizeTo}>
+      {Icon && <Icon />}
       {title}
     </Container>
-  );
+  )
 }

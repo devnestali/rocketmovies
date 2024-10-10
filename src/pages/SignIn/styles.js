@@ -13,12 +13,17 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: 100%;
   max-width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Form = styled.form`
   width: 100%;
   max-width: 41rem;
-  padding: 30rem 4rem;
+  padding: 8rem 4rem;
   margin: auto;
 
   display: flex;

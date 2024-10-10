@@ -1,14 +1,14 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
-  width: 7rem;
-  
-  display: flex;
+  color: ${({ theme }) => theme.COLORS.PINK_800};
+
+  display: inline-flex;
   align-items: center;
   gap: .8rem;
-  
-  background: none;
-  border: none;
-  color: ${({ theme }) => theme.COLORS.PINK};
+
+  > svg {
+    font-size: 2.5rem;
+  }
 `;
