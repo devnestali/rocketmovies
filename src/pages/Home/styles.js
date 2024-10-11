@@ -1,4 +1,4 @@
-/* import styled from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -54,4 +54,4 @@ export const NewFilm = styled(Link)`
   color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   padding: 1.35rem 3.2rem;
   border-radius: .8rem;
-`; */
+`;
