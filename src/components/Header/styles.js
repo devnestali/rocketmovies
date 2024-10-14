@@ -4,10 +4,15 @@ export const Container = styled.header`
   grid-area: header;
 
   width: 100%;
+  /* height: 11.6rem; */
   padding: 3rem 0;
   border-bottom: 1px solid ${({ theme}) => theme.COLORS.GRAY_900};
 
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 
   > .wrapper {
     height: 100%;
@@ -20,6 +25,34 @@ export const Container = styled.header`
       font-size: 2.4rem;
       font-weight: 700;
       color: ${({ theme }) => theme.COLORS.PINK_800};
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .toDesktop {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    > div:nth-child(2) {
+      margin-bottom: 0;
+    }
+
+    .mobileSearch {
+      display: none;
+      background-color: transparent;
+      font-size: 2rem;
+      color: ${({ theme }) => theme.COLORS.GRAY_800};
+
+      position: absolute;
+      left: 2rem;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
     }
   }
 `;
@@ -30,6 +63,11 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: .9rem;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    right: 2rem;
+  }
 
   > div {
     flex-grow: 1;
@@ -52,6 +90,11 @@ export const Profile = styled.div`
 
     border-radius: 50%;
     border: 2px solid ${({ theme }) => theme.COLORS.GRAY_900};
+
+    @media (max-width: 768px) {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 `;
 
