@@ -20,19 +20,6 @@ export const Container = styled.div`
     > .wrapper {
       overflow-y: auto;
 
-      &::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: ${({ theme }) => theme.COLORS.PINK_800 };
-        border-radius: 6px;
-      }
-
       height: 100%;
 
       padding-top: 5rem;
@@ -74,5 +61,35 @@ export const ButtonAdd = styled(Link)`
 
   > svg {
     font-size: 2rem;
+  }
+`;
+
+export const Notes = styled.div`
+  width: 100%;
+  height: 100%;
+
+  margin-top: 3.8rem;
+
+  overflow-y: auto;
+
+  padding-right: .8rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  &::-webkit-scrollbar {
+    width: .8rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.COLORS.PINK_800 };
+    border-radius: 8rem;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 `;

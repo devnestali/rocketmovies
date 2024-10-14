@@ -1,4 +1,4 @@
-import { ButtonAdd, Container, MainTop } from "./styles";
+import { ButtonAdd, Container, MainTop, Notes } from "./styles";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { FiSearch, FiPlus } from "react-icons/fi";
@@ -23,7 +23,11 @@ export function Home() {
               <FiPlus /> Adicionar filme
             </ButtonAdd>
           </MainTop>
-          <Note />
+          <Notes>
+            <Note />
+            <Note />
+            <Note />
+          </Notes>
         </Wrapper>
       </main>
     </Container>
