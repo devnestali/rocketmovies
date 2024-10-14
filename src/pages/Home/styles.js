@@ -6,52 +6,73 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 11.6rem auto;
+  grid-template-rows: 11.6rem 1fr;
   grid-template-areas: 
     "header"
-    "content"
-  ;
+    "content";
 
-  main {
+  > main {
     grid-area: content;
-    padding: 0 12.3rem;
-    width: 100vw;
-    overflow-y: auto;
+    width: 100%;
 
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
+    overflow: hidden;
 
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
+    > .wrapper {
+      overflow-y: auto;
 
-    &::-webkit-scrollbar-thumb {
-      background: ${({ theme }) => theme.COLORS.PINK};
-      border-radius: 6px;
-    }
-
-    .mainTitle {
-      display: flex;
-      justify-content: space-between;
-      margin: 4.5rem 0;
-
-      > h3 {
-        font-size: 3.2rem;
-        font-weight: 400;
+      &::-webkit-scrollbar {
+        width: 8px;
       }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: ${({ theme }) => theme.COLORS.PINK_800 };
+        border-radius: 6px;
+      }
+
+      height: 100%;
+
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+
+      display: flex;
+      flex-direction: column;
     }
   }
 `;
 
-export const NewFilm = styled(Link)`
+export const MainTop = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > h1 {
+    font-size: 3.2rem;
+    font-weight: 400;
+  }
+
+  > button {
+    background: transparent;
+  }
+`;
+
+export const ButtonAdd = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .8rem;
 
-  background-color: ${({ theme }) => theme.COLORS.PINK};
-  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-  padding: 1.35rem 3.2rem;
+  background-color: ${({ theme }) => theme.COLORS.PINK_800};
+  color: ${({ theme }) => theme.COLORS.BLACK_800};
+  
+  padding: 1.4rem 3.2rem;
   border-radius: .8rem;
+
+  > svg {
+    font-size: 2rem;
+  }
 `;

@@ -1,21 +1,17 @@
-import { Container } from "./styles"
-import { FiStar} from "react-icons/fi"
+import { Container } from "./styles";
 
-export function Rating() {
-  return (
-    <Container>
-      <input type="radio" id="5-stars" name="rating" value="5" />
-      <label htmlFor="5-stars"><FiStar size={20} fill="#FF859B"/></label>
-      <input type="radio" id="4-stars" name="rating" value="4" />
-      <label htmlFor="4-stars"><FiStar size={20} fill="#FF859B"/></label>
-      <input type="radio" id="3-stars" name="rating" value="3" />
-      <label htmlFor="3-stars"><FiStar size={20} fill="#FF859B"/></label>
-      <input type="radio" id="2-stars" name="rating" value="2" />
-      <label htmlFor="2-stars"><FiStar size={20} fill=""/></label>
-      <input type="radio" id="1-stars" name="rating" value="1" />
-      <label htmlFor="1-stars"><FiStar size={20} fill=""  /></label>
-    </Container>
-  )
+import { VscStarFull, VscStarEmpty } from "react-icons/vsc";
+
+export function Rating({ isBigSize, grade}) {
+  let stars = [];
+
+  for (let cont = 1; cont <= 5; cont++){
+    if(cont <= grade) {
+      stars.push(<VscStarFull key={cont} />)
+    } else {
+      stars.push(<VscStarEmpty key={cont} />)
+    }
+  };
+
+  return <Container isBigSize={isBigSize}>{stars}</Container>;
 }
-
-// Criar funcao dentro de createmovie e exportar ela para poder passar como parametro o proprio value de cada uma das notas de 0 a 5

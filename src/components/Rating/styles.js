@@ -1,18 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
-  > input[type="radio"] {
-    display: none;
-  }
+  display: flex;
+  justify-content: ${({ isBigSize }) => isBigSize ? 'center' : 'start'};
+  gap: 1rem;
 
-  > label {
-    position: relative;
-    margin-right: 1rem;
-    cursor: pointer;
-
-    > svg {
-      color: ${({ theme }) => theme.COLORS.PINK };
-    }
+  > svg {
+    font-size: ${({ isBigSize }) => isBigSize ? '2.2rem' : '1.4rem' };
+    color: ${({ theme }) => theme.COLORS.PINK_800};
   }
 `;
