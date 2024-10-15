@@ -11,6 +11,10 @@ export const Container = styled.div`
     "header"
     "content";
 
+  @media (max-width: 768px) {
+    grid-template-rows: 7rem 1fr;
+  }
+
   > main {
     grid-area: content;
     width: 100%;
@@ -27,6 +31,11 @@ export const Container = styled.div`
 
       display: flex;
       flex-direction: column;
+
+      @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
     }
   }
 `;
@@ -37,6 +46,11 @@ export const MainTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 
   > h1 {
     font-size: 3.2rem;

@@ -27,6 +27,11 @@ export function Home() {
             <Note />
             <Note />
             <Note />
+            <Note />
+            <Note />
+            <Note />
+            <Note />
+            <Note />
           </Notes>
         </Wrapper>
       </main>
