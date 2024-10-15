@@ -3,35 +3,38 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  gap: 1.6rem;
 
-  background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BACKGROUND_800};
-  color: ${({ theme }) => theme.COLORS.GRAY_500};
+  background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BLACK_700};
 
-  border: ${({ theme, isNew }) => isNew ? `1px dashed ${theme.COLORS.GRAY_500}` : "none"};
-  
-  margin-bottom: .8px;
+  border: ${({ theme, isNew }) => isNew ? `2px dashed ${theme.COLORS.GRAY_800}` : "none"};
   border-radius: 1rem;
-  padding-right: 1.6rem;
+  
+  width: fit-content;
 
   > button {
     border: none;
-    background: none;
-    color: ${({ theme }) => theme.COLORS.PINK};
+    background-color: transparent;
+
+    display: grid;
+    place-items: center;
+
+    svg {
+      color: ${({ theme }) => theme.COLORS.PINK_800};
+      font-size: 2.5rem;
+    }
   }
 
   > input {
-    height: 5.6rem;
-    width: 100%;
+    width: 11rem;
+    flex-grow: 1;
+    background-color: transparent;
 
-    padding: 1.2rem;
-
-    color: ${({ theme }) => theme.COLORS.WHITE};
-    background: transparent;
-
+    padding: 0 .8rem;
+    
     border: none;
+    outline: none;
 
-    &::placeholder {
-      color: ${({ theme }) => theme.COLORS.GRAY_500};
-    }
+    cursor: ${({ isNew }) => !isNew && "not-allowed"};
   }
 `;

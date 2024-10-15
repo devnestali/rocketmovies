@@ -7,8 +7,8 @@ export function NoteItem({ isNew, value, onClick, ...rest }) {
     <Container isNew={isNew}>
       <input 
         type="text"
-        value={value}
         readOnly={!isNew} 
+        value={value}
         {...rest}
       />
 
