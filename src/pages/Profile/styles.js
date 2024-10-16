@@ -1,73 +1,71 @@
-/* import styled from "styled-components";
+import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div``;
+
+export const Header = styled.header`
   width: 100%;
+  height: 14.4rem;
 
-  > header {
-    width: 100%;
-    height: 14.4rem;
+  padding-left: 14.4rem;
+  
+  position: relative;
 
-    background: ${({ theme }) => theme.COLORS.GRAY_700};
+  background-color: ${({ theme }) => theme.COLORS.PINK_900};
 
-    display: flex;
-    align-items: center;
-
-    padding: 0 12.4rem;
-
-  }
+  display: flex;
+  align-items: center;
 `;
 
 export const Form = styled.form`
-  max-width: 34rem;
-  margin: 6.4rem auto 0;
+  max-width: 38rem;
 
-  > div:nth-child(3) {
-    margin-bottom: 2.4rem;
-  }
+  padding: 0 4rem 4rem;
+
+  margin: 0 auto;
 `;
 
-export const Avatar = styled.div`
+export const AvatarProfile = styled.div`
   position: relative;
-  margin: -15rem auto 6.4rem;
+
+  margin: -9.3rem auto 6.4rem;
 
   width: 18.6rem;
   height: 18.6rem;
 
   > img {
-    width: 18.6rem;
-    height: 18.6rem;
-    
+    width: 100%;
+    height: 100%;
+
     border-radius: 50%;
-    object-fit: cover;
+
+    display: block;
   }
 
   > label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    cursor: pointer;
+
     width: 4.8rem;
     height: 4.8rem;
 
-    background-color: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 50%;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    position: absolute;
-    bottom: .7rem;
-    right: .7rem;
+    background-color: ${({ theme }) => theme.COLORS.PINK_800};
 
-    cursor: pointer;
-
-    input {
-      display: none;
+    > svg {
+      font-size: 2rem;
+      color: ${({ theme }) => theme.COLORS.BLACK_900};
     }
 
-    svg {
-      width: 2rem;
-      height: 2rem;
-
-      color: ${({ theme }) => theme.COLORS.GRAY_700};
+    > input {
+      display: none;
     }
   }
 `;
- */
