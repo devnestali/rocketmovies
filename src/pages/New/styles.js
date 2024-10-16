@@ -10,6 +10,10 @@ export const Container = styled.div`
     "header"
     "content";
 
+    @media (max-width: 768px) {
+        grid-template-rows: 7rem 1fr;
+    }
+
     > main {
         grid-area: content;
         
@@ -19,10 +23,23 @@ export const Container = styled.div`
 
         overflow: hidden;
 
+        @media (max-width: 768px) {
+            padding: 3rem 0;
+        }
+
         .wrapper {
             height: 100%;
 
             overflow-y: scroll;
+
+            @media (max-width: 768px) {
+                > a {
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                text-align: center;
+            }
         }
 
         .wrapper::-webkit-scrollbar {
@@ -48,6 +65,11 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.GRAY_700};
 
             margin: 4rem 0 2.4rem;
+
+            @media (max-width: 768px) {
+                margin: 2rem 0 1.6rem;
+                text-align: left;
+            }
         }
 
         .itemsOfNote {
@@ -63,6 +85,10 @@ export const Container = styled.div`
             display: flex;
             gap: 4rem;
             flex-wrap: wrap;
+
+            @media (max-width: 768px) {
+                gap: 1rem;
+            }
         }
     }
 `;
@@ -70,6 +96,11 @@ export const Container = styled.div`
 export const Inputs = styled.div`
     display: flex;
     gap: 5.6rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 2rem;
+    }
 `;
 
 export const TextArea = styled.textarea`
@@ -93,5 +124,14 @@ export const Buttons = styled.div`
 
     > button {
         width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+
+        > button {
+            margin-top: 0;
+        }
     }
 `;
