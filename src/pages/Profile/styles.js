@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  height: 100vh;
+`;
 
 export const Header = styled.header`
   width: 100%;
@@ -14,6 +16,16 @@ export const Header = styled.header`
 
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    > a {
+      position: absolute;
+      left: 50%;
+
+      top: 3rem;
+      transform: translateX(-50%);
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -31,6 +43,10 @@ export const AvatarProfile = styled.div`
 
   width: 18.6rem;
   height: 18.6rem;
+
+  @media (max-width:768px) {
+    margin: -6.4rem auto 6.4rem;
+  }
 
   > img {
     width: 100%;
