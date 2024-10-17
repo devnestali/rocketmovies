@@ -10,6 +10,10 @@ export const Container = styled.div`
         "header"
         "content";
 
+    @media (max-width: 768px) {
+        grid-template-rows: 7rem 1fr;
+    }
+
     > main {
         grid-area: content;
         width: 100%;
@@ -39,6 +43,10 @@ export const Container = styled.div`
             gap: 1rem;
 
             flex-wrap: wrap;
+
+            @media (max-width: 768px) {
+                justify-content: center;
+            }
         }
 
         .description {
@@ -53,10 +61,19 @@ export const MainTop = styled.div`
     flex-direction: column;
     gap: 2.4rem;
 
+    @media (max-width: 768px) {
+        align-items: center;
+    }
+
     > .evaluation {
         display: flex;
         align-items: center;
         gap: 1.9rem;
+
+        @media (max-width: 768px) {
+            display: block;
+            text-align: center;
+        }
         
         > h1 {
             word-wrap: normal;
@@ -71,6 +88,10 @@ export const Info = styled.div`
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+    @media (max-width:768px) {
+        display: block;
+    }
 
     > .userInfo,
       .timeInfo {
@@ -92,8 +113,18 @@ export const Info = styled.div`
         }
     }
 `;
+
 export const Buttons = styled.div`
     margin-top: 2rem;
     display: flex;
     gap: 5.6rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+
+        > button {
+            margin-top: 0;
+        }
+    }
 `;
