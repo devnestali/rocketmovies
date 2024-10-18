@@ -4,7 +4,11 @@ export const Container = styled.div`
     max-width: 68rem;
     padding: 0 4rem;
     text-align: center;
-    margin: 20vmin auto 0;
+    margin: 40vmin auto 0;
+
+    @media (max-width: 768px) {
+        margin: 80vmin auto 0;
+    }
 
     > .title {
         display: flex;
@@ -16,6 +20,10 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.PINK_800};
             font-size: 3rem;
             line-height: 3rem;
+
+            @media (max-width:768px) {
+                font-size: 2.6rem;
+            }
         }
 
         svg {
@@ -27,6 +35,10 @@ export const Container = styled.div`
     > p {
         font-size: 1.5rem;
         margin: 1rem auto;
+
+        @media (max-width:768px) {
+            font-size: 1.8rem;
+        }
     }
 
     > button {
