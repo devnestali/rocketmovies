@@ -84,6 +84,10 @@ export const Container = styled.div`
                 display: flex;
                 gap: 4rem;
                 flex-wrap: wrap;
+
+                @media (max-width: 768px) {
+                    gap: 1rem;
+                }
             }
         }
 
