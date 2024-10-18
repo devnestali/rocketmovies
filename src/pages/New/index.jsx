@@ -39,7 +39,7 @@ export function New() {
                     <h2>Marcadores</h2>
                     <section className="itemsOfNote">
                         <NoteItem value="Teste" />
-                        <NoteItem isNew />
+                        <NoteItem isnew />
                     </section>
 
                     <Buttons>

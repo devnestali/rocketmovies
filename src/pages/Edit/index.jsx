@@ -5,6 +5,7 @@ import { Wrapper } from '../../components/Wrapper';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
+import { NoteItem } from '../../components/NoteItem';
 
 import { FiArrowLeft } from 'react-icons/fi';
 
@@ -34,6 +35,11 @@ export function Edit() {
                     <Textarea 
                     placeholder='Descrição'
                     />
+                    <h2>Marcadores</h2>
+                    <section className="itemsOfNote">
+                      <NoteItem value="Teste"/>
+                      <NoteItem isnew />
+                    </section>
                     <Buttons>
                         <Button 
                             title="Descartar alterações"

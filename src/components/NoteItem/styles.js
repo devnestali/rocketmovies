@@ -5,9 +5,9 @@ export const Container = styled.div`
   align-items: center;
   gap: 1.6rem;
 
-  background-color: ${({ theme, isNew }) => isNew ? "transparent" : theme.COLORS.BLACK_700};
+  background-color: ${({ theme, isnew }) => isnew ? "transparent" : theme.COLORS.BLACK_700};
 
-  border: ${({ theme, isNew }) => isNew ? `2px dashed ${theme.COLORS.GRAY_800}` : "none"};
+  border: ${({ theme, isnew }) => isnew ? `2px dashed ${theme.COLORS.GRAY_800}` : "none"};
   border-radius: 1rem;
   
   width: fit-content;
@@ -35,6 +35,6 @@ export const Container = styled.div`
     border: none;
     outline: none;
 
-    cursor: ${({ isNew }) => !isNew && "not-allowed"};
+    cursor: ${({ isnew }) => !isnew && "not-allowed"};
   }
 `;
