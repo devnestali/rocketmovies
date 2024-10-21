@@ -27,6 +27,12 @@ function AuthProvider({ children }) {
       }
     }
   }
+
+  async function signOut() {
+    setUserData(null);
+    localStorage.removeItem("@rocketmovies:user");
+    localStorage.removeItem("@rocketmovies:token");
+  }
 }
 
 function useAuth() {
