@@ -5,9 +5,27 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import { ButtonText } from "../../components/ButtonText";
 
+import { useState } from "react";
+import { useAuth } from "../../hooks/auth"
+
 
 export function SignIn() {
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn } = useAuth();
+
+  function handleSignIn() {
+    const someFieldIsEmpty = !email || !password
+
+    if(someFieldIsEmpty) {
+      return alert("Preencha todos os campos!");
+    }
+
+    signIn(email, password);
+  }
+
+
   return (
     <Container>
       <Content>
@@ -19,17 +37,21 @@ export function SignIn() {
           <Input 
             icon={FiMail}
             placeholder="E-mail"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
           
           <Input 
             type="password"
             icon={FiLock}
             placeholder="Senha"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
 
           <Button 
             title="Entrar"
-            highlight={true}
+            onClick={handleSignIn}
           />
           
           <ButtonText 
