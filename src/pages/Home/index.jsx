@@ -29,7 +29,7 @@ export function Home() {
         setNotes(response.data);
 
       } catch (error) {
-        if(error.message) {
+        if(error.response) {
           alert(error.response.data.message);
         } else {
           alert("Não foi possível carregar as notas. Por favor, tente mais tarde.");

@@ -1,5 +1,7 @@
 import { Container, MainTop, Info, Buttons } from "./styles";
 
+import dayjs from "dayjs";
+
 import { Header } from "../../components/Header";
 import { Wrapper } from "../../components/Wrapper";
 import { ButtonText } from "../../components/ButtonText";
@@ -9,7 +11,82 @@ import { Button } from "../../components/Button";
 
 import { FiArrowLeft, FiClock } from "react-icons/fi";
 
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { api } from "../../services/api"
+import { useAuth } from "../../hooks/auth";
+
+
 export function Details() {
+    const [data, setData] = useState({});
+    const [dateFormat, setDateFormat] = useState(null);    
+    
+    const params = useParams();
+    const navigate = useNavigate();
+    
+    const { userData } = useAuth();
+
+    const avatar = userData.avatar 
+    ? `${api.defaults.baseURL}/files/${userData.avatar}`
+    : avatarPlaceholder;
+
+    async function handleDelete() {
+        const userConfirmation = confirm("Tem certeza que deseja excluir este filme?");
+
+        if(userConfirmation) {
+            try {
+                await api.delete(`/notes/${params.id}`);
+                alert("Filme excluído com sucesso!");
+                navigate("/");
+            } catch (error) {
+                if(error.response) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("Não foi possível excluir o filme. Por favor, tente mais tarde.");
+                }
+            }
+        }
+    }
+
+    function handleEdit() {
+        navigate(`/edit/${params.id}`);
+    }
+
+    useEffect(() => {
+        if(data.updated_at) {
+            const time = dayjs(data.updated_at).format('h:mm A');
+            const date = dayjs(data.updated_at).format('DD/MM/YYYY');
+
+            const [hours, minutes] = time.split(':');
+            
+            setDateFormat({
+                time: `${hours}:${minutes}`,
+                date,
+            });
+        }
+        
+    }, [data]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await api.get(`/notes/${params.id}`);
+                setData(response.data);
+            } catch (error) {
+                if(error.response) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("Não foi possível carregar os dados desse filme. Por favor, tente mais tarde.");
+                    navigate(-1);
+                }
+            }            
+        }
+
+        fetchData();
+    }, [])
     return (
         <Container>
             <Header />
@@ -22,40 +99,60 @@ export function Details() {
                             title="Voltar"
                         />
                         <div className="evaluation">
-                            <h1>Teste 1</h1>
+                            <h1>{data.title}</h1>
                             <Rating 
-                                grade="3"
+                                grade={data.rating}
                                 isbigsize="true"
                             />
                         </div>
                         <Info>
                             <div className="userInfo">
-                                <img src="https://github.com/devnestali.png" alt="Foto do usuário" />
-                                <p>Por Victor Nestali</p>
+                                <img src={avatar} alt={userData.name} />
+                                <p>Por {userData.name}</p>
                             </div>
 
                             <div className="timeInfo">
                                 <FiClock />
-                                <p>19:30</p>
+                                {
+                                    dateFormat && (
+                                        <p>
+                                             {dateFormat.date} às {dateFormat.time}
+                                        </p>
+                                    )
+                                }
                             </div>
                         </Info>
                     </MainTop>
 
-                    <div className="tags">
-                        <Tag name="Aventura" />
-                        <Tag name="Drama" />
-                        <Tag name="2023" />
-                    </div>
+                    {
+                        data.tags && (
+                            <div className="tags">
+                                {
+                                    data.tags.map((tag) => (
+                                        <Tag 
+                                            key={String(tag.id)}
+                                            name={tag.name} 
+                                        /> 
+                                    ))
+                                }
+                            </div>
+                        )
+                    }
                     
-                    <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium recusandae optio dignissimos dicta quis consequuntur reiciendis iure corrupti, molestias facilis, placeat blanditiis repellendus laboriosam! Adipisci veritatis aut aspernatur odio ducimus in facilis cupiditate tempore labore tenetur, suscipit, voluptates laborum explicabo voluptatibus maxime repellat ad aliquid modi cumque tempora voluptatem? Qui, placeat enim? Maiores possimus ullam expedita voluptatibus obcaecati libero atque at necessitatibus, perferendis eos aliquid veritatis vero impedit unde velit fugit odio rerum dolorum quae exercitationem fugiat a neque ipsam! Mollitia tenetur omnis voluptatibus facere minus facilis dolorum corporis exercitationem laudantium fuga commodi nobis voluptatem distinctio iusto aliquam fugiat, nam provident quis delectus dicta rem illum velit. Totam in, est assumenda accusamus porro suscipit pariatur harum esse quidem libero, rem itaque eaque! Magni ipsum vel illo sed cumque maiores at consequatur recusandae nisi, vero provident sit perspiciatis corrupti dolores eius delectus ipsam repellendus iure laudantium tempore ipsa aut. Magnam, quas?</p>
+                    
+                    <p className="description">
+                        {data.description}
+                    </p>
 
                     <Buttons>
                         <Button 
                             title="Excluir Filme"
                             highlight={false}
+                            onClick={handleDelete}
                         />
                         <Button 
                             title="Editar Filme"
+                            onClick={handleEdit}
                         />
                     </Buttons>
                 </Wrapper>

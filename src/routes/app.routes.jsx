@@ -14,7 +14,7 @@ export function AppRoutes() {
       <Route path='/new' element={<New />} />
       <Route path='/profile' element={<Profile />} />
       <Route path='/details/:id' element={<Details />} />
-      <Route path='/edit' element={<Edit />} />
+      <Route path='/edit/:id' element={<Edit />} />
       <Route path='/*' element={<NotFound />} />
     </Routes>
   )

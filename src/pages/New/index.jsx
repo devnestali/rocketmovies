@@ -78,7 +78,7 @@ export function New() {
                 alert("Filme cadastrado com sucesso!");
                 navigate("/");
             } catch (error) {
-                if(error.message) {
+                if(error.response) {
                     alert(error.response.data.message)
                 } else {
                     alert("Não foi possível realizar o cadastro do filme. Por favor, tente mais tarde.");
