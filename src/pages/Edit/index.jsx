@@ -9,7 +9,42 @@ import { NoteItem } from '../../components/NoteItem';
 
 import { FiArrowLeft } from 'react-icons/fi';
 
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+import { api } from '../../services/api';
+
 export function Edit() {
+    const [data, setData] = useState({});
+    
+    const params = useParams();
+    const navigate = useNavigate();
+
+    function handleDiscardChanges() {
+        const userConfirmation = confirm("Todas as alterações serão perdidas, deseja continuar?");
+
+        if(userConfirmation) {
+            navigate("/");
+        }
+    }
+
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await api.get(`/notes/${params.id}`);
+                setData(response.data)
+            } catch (error) {
+                if(error.response) {
+                    alert(error.response.data.message);
+                } else {
+                    alert("Não foi possível carregar os dados desse filme. Por favor, tente mais tarde.");
+                }
+            }
+        }
+
+        fetchData();
+    }, [])
     return (
         <Container>
             <Header />
@@ -24,26 +59,43 @@ export function Edit() {
                     <Inputs>
                         <Input 
                             placeholder="Título"
+                            value={data.title}
                         />
                         <Input 
                             type='number'
                             placeholder='Sua nota (de 0 a 5)'
                             min='0'
                             max='0'
+                            value={data.rating}
                         />
                     </Inputs>
                     <Textarea 
-                    placeholder='Descrição'
+                        placeholder='Descrição'
+                        value={data.description}
                     />
                     <h2>Marcadores</h2>
-                    <section className="itemsOfNote">
-                      <NoteItem value="Teste"/>
-                      <NoteItem isnew />
-                    </section>
+                    {
+                        data.tags && (
+                            <section className="itemsOfNote">
+                                {
+                                    data.tags.map(tag => (
+                                        <NoteItem 
+                                            key={tag.id}
+                                            value={tag.name}
+                                        />
+                                    ))
+                                }
+                                <NoteItem isnew />      
+                            </section>
+
+                        )
+                    }
+                    
                     <Buttons>
                         <Button 
                             title="Descartar alterações"
                             highlight={false}
+                            onClick={handleDiscardChanges}
                         />
                         <Button 
                             title="Salvar alterações"
