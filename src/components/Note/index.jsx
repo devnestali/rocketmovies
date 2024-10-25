@@ -17,7 +17,7 @@ export function Note({ data, ...rest }) {
                     {
                         data.tags.map(tag => (
                             <Tag 
-                            id={tag.id}    
+                            key={tag.id}    
                             name={tag.name} 
                             />
                         ))

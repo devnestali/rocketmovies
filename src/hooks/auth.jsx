@@ -33,7 +33,7 @@ function AuthProvider({ children }) {
     localStorage.removeItem("@rocketmovies:token");
   }
 
-  async function updateUser({ user, avatar}) {
+  async function updateUser({ user, avatar }) {
     try {
       if (avatar) {
         const fileForm = new FormData();
@@ -43,21 +43,25 @@ function AuthProvider({ children }) {
 
         setUserData(response.data);
 
-        localStorage.setItem("@rocketmovies:user", JSON.stringify(response.data));
+        localStorage.setItem(
+          "@rocketmovies:user",
+          JSON.stringify(response.data)
+        );
       }
-
       const response = await api.put("/users", user);
 
       setUserData(response.data);
 
       localStorage.setItem("@rocketmovies:user", JSON.stringify(response.data));
 
-      alert("Dados atualizados com sucesso!");
+      alert("Dados atualizados com sucesso");
     } catch (error) {
-      if(error.response) {
+      if (error.response) {
         alert(error.response.data.message);
       } else {
-        alert("Não foi possível atualizar os dados. Por favor, tente mais tarde.");
+        alert(
+          "Não foi possível atualizar. Por favor tente novamente mais tarde."
+        );
       }
     }
   }
