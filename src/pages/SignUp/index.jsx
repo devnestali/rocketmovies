@@ -69,7 +69,7 @@ export function SignUp() {
           />
 
           <Button 
-            title="Entrar"
+            title="Criar Conta"
             onClick={handleSignUp}
           />
           

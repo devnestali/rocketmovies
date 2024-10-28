@@ -40,7 +40,6 @@ function AuthProvider({ children }) {
         fileForm.append("avatar", avatar);
 
         const response = await api.patch("/users/avatar", fileForm);
-
         setUserData(response.data);
 
         localStorage.setItem(

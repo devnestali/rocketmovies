@@ -45,11 +45,9 @@ export function Profile() {
   function handleUpdateAvatar(e) {
     const file = e.target.files[0];
     setAvatarFile(file);
-    console.log(file)
   
     const tempUrl = URL.createObjectURL(file);
     setAvatarUrl(tempUrl);
-    console.log(tempUrl)
   };
   
   return (
@@ -65,7 +63,7 @@ export function Profile() {
             <input
               type="file"
               id="userPhoto"
-              accept="image/png, image/jpg"
+              accept=".png, .jpg, .jpeg"
               onChange={e => {
                 handleUpdateAvatar(e)
                 setInputNotBeenChanged(false);
@@ -111,8 +109,8 @@ export function Profile() {
         />
         <Button
           title="Salvar"
-          onClick={handleUpdate}
           disabled={inputNotBeenChanged}
+          onClick={handleUpdate}
         />
       </Form>
     </Container>
