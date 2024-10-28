@@ -11,7 +11,7 @@ RocketMovies is an application that allows users to save reviews and synopses ab
  - Route creation
  - API RestFul
  - Integration with backend services
- - ReactJS, Styled-components, HTML, CSS, React-dom
+ - ReactJS, Styled-components, HTML, CSS, React-dom, ReactHooks
 
 
 
