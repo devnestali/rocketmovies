@@ -24,7 +24,7 @@ export function Profile() {
   const [inputNotBeenChanged, setInputNotBeenChanged] = useState(true);
 
   const avatar = userData.avatar
-    ? `${api.defaults.baseURL}/file/${userData.avatar}`
+    ? `${api.defaults.baseURL}/files/${userData.avatar}`
     : avatarPlaceholder;
 
   const [avatarUrl, setAvatarUrl] = useState(avatar);
