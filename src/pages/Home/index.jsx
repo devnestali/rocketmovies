@@ -19,6 +19,12 @@ export function Home() {
   function handleShowDetails(id) {
     navigate(`/details/${id}`);
   }
+
+  function handleMobileSearch() {
+    const filmSearch = window.prompt("Digite sua busca");
+
+    setSearch(filmSearch);
+  }
   
   
   
@@ -46,7 +52,13 @@ export function Home() {
           placeholder="Pesquisar pelo título"
           onChange={e => setSearch(e.target.value)}
         />
-        <button className="mobileSearch"><FiSearch /></button>
+        <button 
+          type="button"
+          className="mobileSearch"
+          onClick={handleMobileSearch}
+        >
+          <FiSearch />
+        </button>
       </Header>
       <main>
         <Wrapper>
